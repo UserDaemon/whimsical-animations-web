@@ -12,12 +12,9 @@ type LayoutProps = {
 const Layout = ({ children }: LayoutProps) => {
   const { pathname } = useLocation();
   
-  // Automatically scroll to top when pathname changes
+  // Automatically scroll to top immediately when pathname changes
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    window.scrollTo(0, 0);
   }, [pathname]);
 
   return (
