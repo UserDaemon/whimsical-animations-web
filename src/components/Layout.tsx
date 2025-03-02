@@ -1,6 +1,5 @@
 
-import { ReactNode, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { ReactNode } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { motion } from 'framer-motion';
@@ -10,13 +9,6 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps) => {
-  const { pathname } = useLocation();
-  
-  // Automatically scroll to top immediately when pathname changes
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
